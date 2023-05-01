@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Library</h1>
+
+    <button class="new-book" onclick="openForm()">+ Add Book</button>
+
+    <div class="form-popup" id="book-form">
+        <form class="form-container" action="">
+            <div class="title input-area">
+                <label for="title" class="label">Book Title:</label>
+                <input type="text" name="title" id="title" class="text-input">
+            </div>
+            <div class="author input-area">
+                <label for="author" class="label">Author:</label>
+                <input type="text" name="author" id="author" class="text-input">
+            </div>
+            <div class="pages input-area">
+                <label for="pages" class="label">Page Count:</label>
+                <input type="number" name="pages" id="pages" class="text-input">
+            </div>
+            <div class="read input-area">
+                <label for="read" class="label">Read?</label>
+                <div class="radio-button yes-radio">
+                    <input type="radio" id="yes" name="read" value="yes">
+                    <label for="yes">Yes</label>
+                </div>
+                <div class="radio-button no-radio">
+                    <input type="radio" id="no" name="read" value="no">
+                    <label for="no">No</label>
+                </div>
+            </div>
+            <div class="rating input-area">
+                <label for="rating" class="label">Rating:</label>
+                <select name="Rating" id="rating" class="select-rating">
+                    <option value="default"> </option>
+                    <option value="love">Loved it!</option>
+                    <option value="like">Liked it</option>
+                    <option value="indifferent">Meh</option>
+                    <option value="dislike">Disliked it</option>
+                    <option value="hate">Hated it!</option>
+                </select>
+            </div>
+            <div class="submit">
+                <button class="submit-button">Add To Library Collection</button>
+            </div>
+            <div>
+                <button id="close-button">X</button>
+            </div>
+        
+        </form>
+    </div>
+    
+
+
+    <script src="./script.js"></script>
+  </body>
+</html>

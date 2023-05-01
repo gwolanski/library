@@ -1,0 +1,102 @@
+body {
+
+}
+
+h1 {
+    text-align: center;
+}
+
+.form-popup {
+    display: none;
+    position: fixed;
+    border: 2px solid black;
+    top: 25%;
+    left: 25%;
+    z-index: 9;
+    background-color: bisque;
+}
+
+form {
+    font-size: 1.2rem;
+    padding: 10px;
+    width: 90%;
+    margin-left: 1rem;
+    justify-self: center;
+    display: grid;
+    grid-template-columns: 6fr 1fr;
+    grid-template-rows: repeat(6, 1fr);
+    gap: 10px;
+}
+
+.title {
+    grid-row: 1;
+}
+
+.author {
+    grid-row: 2;
+}
+
+.pages {
+    grid-row: 3;
+}
+
+.read {
+    grid-row: 4;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.radio-buttons {
+    display: flex;
+    flex-direction: row;
+}
+
+.yes-radio {
+    grid-column: 2;
+}
+
+.no-radio {
+    grid-column: 3;
+}
+
+.rating {
+    grid-row: 5;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.submit {
+    grid-row: 6;
+    place-self: center;
+}
+
+.submit-button {
+    font-size: 1rem;
+    padding: 5px;
+}
+
+.select-rating {
+    grid-column: 2 / 4;
+}
+
+.input-area {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 5px;
+}
+
+.label {
+    justify-self: end;
+    align-self: center;
+    grid-column: 1;
+}
+
+.text-input {
+    height: 20%;
+    align-self: center;
+    font-size: 1rem;
+    padding: 10px;
+    grid-column: 2;
+    max-width: 100%;
+}
