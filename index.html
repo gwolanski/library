@@ -8,12 +8,14 @@
     <title>Document</title>
   </head>
   <body>
-    <h1>Library</h1>
-
-    <button class="new-book" onclick="openForm()">+ Add Book</button>
-
+    <div class="header">
+        <img src="./books.png" alt="books" id="books-image">
+        <div id="page-title">Library</div>
+        <button class="new-book" onclick="openForm()">+ Add Book</button>
+    </div>
     <div class="form-popup" id="book-form">
         <form class="form-container" action="">
+            <div class="form-title">New Book</div>
             <div class="title input-area">
                 <label for="title" class="label">Book Title:</label>
                 <input type="text" name="title" id="title" class="text-input">
@@ -27,19 +29,15 @@
                 <input type="number" name="pages" id="pages" class="text-input">
             </div>
             <div class="read input-area">
-                <label for="read" class="label">Read?</label>
-                <div class="radio-button yes-radio">
-                    <input type="radio" id="yes" name="read" value="yes">
-                    <label for="yes">Yes</label>
-                </div>
-                <div class="radio-button no-radio">
-                    <input type="radio" id="no" name="read" value="no">
-                    <label for="no">No</label>
-                </div>
+                <label for="read" class="label">Read Status:</label>
+                <select name="read" id="read" class="select-input">
+                    <option value="no">Not Read</option>
+                    <option value="yes">Read</option>
+                </select>
             </div>
             <div class="rating input-area">
                 <label for="rating" class="label">Rating:</label>
-                <select name="Rating" id="rating" class="select-rating">
+                <select name="rating" id="rating" class="select-input">
                     <option value="default"> </option>
                     <option value="love">Loved it!</option>
                     <option value="like">Liked it</option>
@@ -49,9 +47,9 @@
                 </select>
             </div>
             <div class="submit">
-                <button class="submit-button">Add To Library Collection</button>
+                <button class="submit-button">Submit</button>
             </div>
-            <div>
+            <div class="close">
                 <button id="close-button">X</button>
             </div>
         

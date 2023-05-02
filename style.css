@@ -1,72 +1,91 @@
 body {
-
+    margin: 0;
+    padding: 0;
+    background-color: blanchedalmond;
 }
 
-h1 {
-    text-align: center;
+.header {
+    display: grid;
+    grid-template-columns: 110px 120px 3fr 1fr;
+    padding: 15px;
+}
+
+#books-image {
+    width: 100px;
+    grid-column: 1;
+}
+
+#page-title {
+    grid-column: 2;
+    align-self: end;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.new-book {
+    grid-column: 4;
+    width: 10vw;
+    height: fit-content;
+    font-size: 1.25rem;
+    align-self: end;
+    border: 2px solid black;
 }
 
 .form-popup {
     display: none;
     position: fixed;
     border: 2px solid black;
-    top: 25%;
-    left: 25%;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
     z-index: 9;
-    background-color: bisque;
+    background-color: rgba(57, 57, 60, 0.85);
 }
 
 form {
     font-size: 1.2rem;
+    border: 2px solid black;
+    background-color: rgb(245, 245, 245);
     padding: 10px;
-    width: 90%;
-    margin-left: 1rem;
+    max-width: 400px; 
+    margin: 10px auto;
     justify-self: center;
     display: grid;
-    grid-template-columns: 6fr 1fr;
-    grid-template-rows: repeat(6, 1fr);
+    grid-template-columns: 5fr 1fr;
+    grid-template-rows: repeat(7, 1fr);
     gap: 10px;
 }
 
-.title {
+.form-title {
     grid-row: 1;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
 }
 
-.author {
+.title {
     grid-row: 2;
 }
 
-.pages {
+.author {
     grid-row: 3;
 }
 
-.read {
+.pages {
     grid-row: 4;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
 }
 
-.radio-buttons {
-    display: flex;
-    flex-direction: row;
-}
-
-.yes-radio {
-    grid-column: 2;
-}
-
-.no-radio {
-    grid-column: 3;
+.read {
+    grid-row: 5;
 }
 
 .rating {
-    grid-row: 5;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-row: 6;
 }
 
 .submit {
-    grid-row: 6;
+    grid-row: 7;
     place-self: center;
 }
 
@@ -75,8 +94,16 @@ form {
     padding: 5px;
 }
 
-.select-rating {
-    grid-column: 2 / 4;
+#close-button {
+    font-weight: bold;
+    font-size: 1rem;
+    color:rgb(75, 75, 79);
+    border: none;
+    background-color: rgb(245, 245, 245);
+}
+
+.close {
+    justify-self: end;
 }
 
 .input-area {
@@ -98,5 +125,12 @@ form {
     font-size: 1rem;
     padding: 10px;
     grid-column: 2;
+    max-width: 100%;
+}
+
+.select-input {
+    align-self: center;
+    font-size: 1rem;
+    padding: 10px;
     max-width: 100%;
 }
