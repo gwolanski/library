@@ -27,7 +27,7 @@ body {
     width: 10vw;
     height: fit-content;
     font-size: 1.25rem;
-    align-self: end;
+    place-self: end;
     border: 2px solid black;
 }
 
@@ -89,7 +89,7 @@ form {
     place-self: center;
 }
 
-.submit-button {
+#submit-button {
     font-size: 1rem;
     padding: 5px;
 }
@@ -133,4 +133,14 @@ form {
     font-size: 1rem;
     padding: 10px;
     max-width: 100%;
+}
+
+table {
+    margin: 2vh auto 0 auto;
+    width: 90%;
+    background-color: rgba(145, 113, 65, 0.3);
+}
+
+.table-header {
+    font-size: 1.25rem;
 }

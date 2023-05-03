@@ -14,48 +14,55 @@
         <button class="new-book" onclick="openForm()">+ Add Book</button>
     </div>
     <div class="form-popup" id="book-form">
-        <form class="form-container" action="">
+        <form id="form-container" onsubmit="addBookToLibrary(); return false;" required>
             <div class="form-title">New Book</div>
             <div class="title input-area">
                 <label for="title" class="label">Book Title:</label>
-                <input type="text" name="title" id="title" class="text-input">
+                <input type="text" name="title" id="title" class="text-input" required>
             </div>
             <div class="author input-area">
                 <label for="author" class="label">Author:</label>
-                <input type="text" name="author" id="author" class="text-input">
+                <input type="text" name="author" id="author" class="text-input" required>
             </div>
             <div class="pages input-area">
                 <label for="pages" class="label">Page Count:</label>
-                <input type="number" name="pages" id="pages" class="text-input">
+                <input type="number" name="pages" id="pages" class="text-input" min=1 required>
             </div>
             <div class="read input-area">
                 <label for="read" class="label">Read Status:</label>
                 <select name="read" id="read" class="select-input">
-                    <option value="no">Not Read</option>
-                    <option value="yes">Read</option>
+                    <option value="Note Read">Not Read</option>
+                    <option value="Read">Read</option>
                 </select>
             </div>
             <div class="rating input-area">
                 <label for="rating" class="label">Rating:</label>
                 <select name="rating" id="rating" class="select-input">
                     <option value="default"> </option>
-                    <option value="love">Loved it!</option>
-                    <option value="like">Liked it</option>
-                    <option value="indifferent">Meh</option>
-                    <option value="dislike">Disliked it</option>
-                    <option value="hate">Hated it!</option>
+                    <option value="Loved it">Loved it</option>
+                    <option value="Liked it">Liked it</option>
+                    <option value="Meh">Meh</option>
+                    <option value="Disliked it">Disliked it</option>
+                    <option value="Hated it">Hated it</option>
                 </select>
             </div>
             <div class="submit">
-                <button class="submit-button">Submit</button>
+                <input type="submit" value="Submit" id="submit-button">
             </div>
             <div class="close">
                 <button id="close-button">X</button>
             </div>
-        
         </form>
     </div>
-    
+    <table id="library-table">
+        <tr>
+            <th class="table-header">Book Title</th>
+            <th class="table-header">Book Author</th>
+            <th class="table-header">Page Count</th>
+            <th class="table-header">Status</th>
+            <th class="table-header">Rating</th>
+        </tr>
+    </table>
 
 
     <script src="./script.js"></script>
