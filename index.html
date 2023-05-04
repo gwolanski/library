@@ -31,7 +31,7 @@
             <div class="read input-area">
                 <label for="read" class="label">Read Status:</label>
                 <select name="read" id="read" class="select-input">
-                    <option value="Note Read">Not Read</option>
+                    <option value="Not Read">Not Read</option>
                     <option value="Read">Read</option>
                 </select>
             </div>
@@ -56,11 +56,12 @@
     </div>
     <table id="library-table">
         <tr>
-            <th class="table-header">Book Title</th>
-            <th class="table-header">Book Author</th>
-            <th class="table-header">Page Count</th>
-            <th class="table-header">Status</th>
-            <th class="table-header">Rating</th>
+            <th class="table-header" id="title-column">Book Title</th>
+            <th class="table-header" id="author-column">Book Author</th>
+            <th class="table-header" id="page-column">Page Count</th>
+            <th class="table-header" id="status-column">Status</th>
+            <th class="table-header" id="rating-column">Rating</th>
+            <th class="table-header" id="deletebtn-column"> </th>
         </tr>
     </table>
 

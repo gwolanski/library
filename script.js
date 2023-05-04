@@ -25,6 +25,8 @@ function submit() {
     let newBook = new Book(title, author, pages, read, rating);
     myLibrary.push(newBook);
     addBookToLibrary(newBook);
+    bookForm.reset();
+    closeForm();
 }
 
 function openForm() {

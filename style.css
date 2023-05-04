@@ -137,10 +137,44 @@ form {
 
 table {
     margin: 2vh auto 0 auto;
-    width: 90%;
+    width: 95%;
     background-color: rgba(145, 113, 65, 0.3);
+    border-collapse: collapse;
+    table-layout: fixed;
+    padding: 10px;
 }
 
 .table-header {
     font-size: 1.25rem;
+    width: 15%;
+    text-align: left;
+}
+
+td {
+    width: 15%;
+    word-wrap: break-word;
+    text-align: left;
+}
+
+th,
+td {
+    padding: 10px;
+}
+
+#title-column,
+#author-column {
+    width: 25%;
+}
+
+#page-column {
+    width: 10%;
+}
+
+#status-column,
+#rating-column {
+    width: 17.5%;
+}
+
+#deletebtn-column {
+    width: 5%
 }
