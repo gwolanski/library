@@ -7,8 +7,20 @@ let myLibrary = [];
 
 submitButton.addEventListener("click", (e) => {
     e.preventDefault();
-    submit();
+    validateForm();
 })
+
+function validateForm() {
+    let title = document.getElementById("title").value;
+    let author = document.getElementById("author").value;
+
+    if (title == "" || author == "") {
+        alert("Title and Author fields must be completed");
+        return false;
+    } else {
+        submit();
+    }
+}
 
 closeButton.addEventListener("click", (e) => {
     e.preventDefault();
@@ -34,11 +46,9 @@ function openForm() {
 
 function closeForm() {
     document.getElementById("book-form").style.display = "none";
-    console.log(myLibrary)
 }
 
 function Book(title, author, pages, read, rating) {
-  //the constructor
   this.title = title
   this.author = author
   this.pages = pages
@@ -70,8 +80,6 @@ function addBookToLibrary(book) {
     cell6.innerHTML = `<button class='delete' onclick='deleteRow(${myLibrary.length})'><img src='./trash.svg'></button>`;
 
     row.dataset.attributeIndex = myLibrary.length;
-
-    console.log(myLibrary);
 }
 
 function deleteRow(index) {
@@ -90,17 +98,10 @@ function toggleReadStatus(index) {
         if (rows[i].dataset.attributeIndex == index) {
             let targetRow = libraryTable.rows[i];
             let statusCell = targetRow.cells[3]; 
-            let readButton = statusCell.querySelector(".statusButton");
-            console.log("readButton: " + readButton)
             if (statusCell.innerHTML.includes('Yes')) {
                 statusCell.innerHTML = `<button class='statusButton statusNotRead' onclick='toggleReadStatus(${index})'>No</button>`;
-                // readButton.classList.remove("statusRead");
-                // readButton.classList.add("statusNotRead");
             } else {
                 statusCell.innerHTML = `<button class='statusButton statusRead' onclick='toggleReadStatus(${index})'>Yes</button>`;
-                // readButton.classList.remove("statusNotRead");
-                // readButton.classList.add("statusRead");
-        
             }
         }
     }
@@ -108,4 +109,3 @@ function toggleReadStatus(index) {
 
 }
 
-//once entry created, have ability to toggle read property on or off

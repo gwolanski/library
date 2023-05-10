@@ -14,19 +14,20 @@
         <button class="new-book" onclick="openForm()">+ Add Book</button>
     </div>
     <div class="form-popup" id="book-form">
-        <form id="form-container" onsubmit="addBookToLibrary(); return false;" required>
-            <div class="form-title">New Book</div>
+        <form id="form-container" required>
+        <!-- <form id="form-container" onsubmit="addBookToLibrary(); return false;" required> -->
+            <div class="form-title">New Book Info</div>
             <div class="title input-area">
-                <label for="title" class="label">Book Title:</label>
+                <label for="title" class="label">Book Title:*</label>
                 <input type="text" name="title" id="title" class="text-input" required>
             </div>
             <div class="author input-area">
-                <label for="author" class="label">Author:</label>
+                <label for="author" class="label">Author:*</label>
                 <input type="text" name="author" id="author" class="text-input" required>
             </div>
             <div class="pages input-area">
                 <label for="pages" class="label">Page Count:</label>
-                <input type="number" name="pages" id="pages" class="text-input" min=1 required>
+                <input type="number" name="pages" id="pages" class="text-input" min="1" required>
             </div>
             <div class="read input-area">
                 <label for="read" class="label">Read?</label>
@@ -38,7 +39,7 @@
             <div class="rating input-area">
                 <label for="rating" class="label">Rating:</label>
                 <select name="rating" id="rating" class="select-input">
-                    <option value="default"> </option>
+                    <option value="None"> </option>
                     <option value="Loved it">Loved it</option>
                     <option value="Liked it">Liked it</option>
                     <option value="Meh">Meh</option>
