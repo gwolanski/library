@@ -164,7 +164,7 @@ td {
 
 #title-column,
 #author-column {
-    width: 28.5%;
+    width: 31.5%;
 }
 
 #page-column {
@@ -173,11 +173,11 @@ td {
 
 #status-column,
 #rating-column {
-    width: 15%;
+    width: 10%;
 }
 
 #deletebtn-column {
-    width: 4%;
+    width: 6%;
 }
 
 .delete {
@@ -188,11 +188,16 @@ td {
     cursor:pointer;
 }
 
-.status-read {
-    background-color: rgba(120, 205, 120, 0.81);
+.statusButton {
+    font-size: 1.1rem;
+
 }
 
-.status-not-read {
-    background-color:rgba(199, 218, 197, 0.81);
+.statusRead {
+    background-color: rgba(149, 238, 149, 0.81);
+}
+
+.statusNotRead {
+    background-color:rgba(215, 215, 215, 0.81);
 
 }

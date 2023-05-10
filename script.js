@@ -61,7 +61,11 @@ function addBookToLibrary(book) {
     cell1.innerHTML = book.title;
     cell2.innerHTML = book.author;
     cell3.innerHTML = book.pages;
-    cell4.innerHTML = `<button class='status-button' onclick='toggleReadStatus(${myLibrary.length})'>${book.read}</button>`;
+    if (book.read == "Yes") {
+        cell4.innerHTML = `<button class='statusButton statusRead' onclick='toggleReadStatus(${myLibrary.length})'>${book.read}</button>`;   
+    } else {
+        cell4.innerHTML = `<button class='statusButton statusNotRead' onclick='toggleReadStatus(${myLibrary.length})'>${book.read}</button>`
+    };
     cell5.innerHTML = book.rating;
     cell6.innerHTML = `<button class='delete' onclick='deleteRow(${myLibrary.length})'><img src='./trash.svg'></button>`;
 
@@ -86,23 +90,16 @@ function toggleReadStatus(index) {
         if (rows[i].dataset.attributeIndex == index) {
             let targetRow = libraryTable.rows[i];
             let statusCell = targetRow.cells[3]; 
-            // let readButton = statusCell.querySelector(".status-button");
-            console.log("Status Cell: " + statusCell.innerHTML);
+            let readButton = statusCell.querySelector(".statusButton");
+            console.log("readButton: " + readButton)
             if (statusCell.innerHTML.includes('Yes')) {
-            //     //change class to status-read
-            //     readButton.classList.remove("status-read");
-            //     readButton.classList.add("status-not-read");
-            // **FAIRLY CERTAIN THE ARG IN TOGGLEREADSTATUS IS WHY IT ISNT WORKING RIGHT. INDEX NEEDS TO BE RETAINED FROM ROW GENERATION
-                statusCell.innerHTML = `<button class='status-button' onclick='toggleReadStatus(${index})'>No</button>`;
-            //     //change design and display text in CSS
-                
+                statusCell.innerHTML = `<button class='statusButton statusNotRead' onclick='toggleReadStatus(${index})'>No</button>`;
+                // readButton.classList.remove("statusRead");
+                // readButton.classList.add("statusNotRead");
             } else {
-                statusCell.innerHTML = `<button class='status-button' onclick='toggleReadStatus(${index})'>Yes</button>`;
-                //     
-            //change class to status-unread
-            //     readButton.classList.remove("status-not-read");
-            //     readButton.classList.add("status-read");
-            //     //change design and display text in CSS
+                statusCell.innerHTML = `<button class='statusButton statusRead' onclick='toggleReadStatus(${index})'>Yes</button>`;
+                // readButton.classList.remove("statusNotRead");
+                // readButton.classList.add("statusRead");
         
             }
         }
