@@ -187,3 +187,12 @@ td {
 .delete:hover {
     cursor:pointer;
 }
+
+.status-read {
+    background-color: rgba(120, 205, 120, 0.81);
+}
+
+.status-not-read {
+    background-color:rgba(199, 218, 197, 0.81);
+
+}
