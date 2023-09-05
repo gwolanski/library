@@ -5,20 +5,74 @@ const submitButton = document.getElementById("submit-button");
 const closeButton = document.getElementById("close-button");
 let myLibrary = [];
 
+
+let title = document.getElementById("title").value;
+let titleInput = document.getElementById("title");
+titleInput.addEventListener("blur", titleValidation);
+let titleError = document.getElementById("title-error");
+let titleValid = false;
+
+let author = document.getElementById("author").value;
+let authorInput = document.getElementById("author");
+authorInput.addEventListener("blur", authorValidation);
+let authorError = document.getElementById("author-error");
+let authorValid = false;
+
+let pages = document.getElementById("pages").value;
+let pagesInput = document.getElementById("pages");
+pagesInput.addEventListener("blur", pagesValidation);
+let pagesError = document.getElementById("pages-error");
+let pagesValid = false;
+
 submitButton.addEventListener("click", (e) => {
     e.preventDefault();
     validateForm();
 })
 
-function validateForm() {
-    let title = document.getElementById("title").value;
-    let author = document.getElementById("author").value;
+function titleValidation() {
+    titleError.innerHTML = "";
 
-    if (title == "" || author == "") {
-        alert("Title and Author fields must be completed");
-        return false;
+    if (title == "") {
+        titleError.innerHTML = "Title is required";
+        titleValid = false;
     } else {
+        titleValid = true;
+    }
+}
+
+function authorValidation() {
+    authorError.innerHTML = "";
+
+    if (author == "") {
+        authorError.innerHTML = "Author is required";
+        authorValid = false;
+    } else {
+        authorValid = true;
+    }
+}
+
+function pagesValidation() {
+    pagesError.innerHTML = "";
+
+    if (pageCount == "") {
+        pagesError.innerHTML = "Page count is required";
+        pagesValid = false;
+    } else {
+        pagesValid = true;
+    }
+}
+
+function validateForm() {
+    titleValidation();
+    authorValidation();
+    pagesValidation();
+
+    if (titleValid && authorValid && pagesValid) {
         submit();
+
+        titleValid = false;
+        authorValid = false;
+        pagesValid = false;
     }
 }
 
@@ -28,9 +82,6 @@ closeButton.addEventListener("click", (e) => {
 })
 
 function submit() {
-    let title = document.getElementById("title").value;
-    let author = document.getElementById("author").value;
-    let pages = document.getElementById("pages").value;
     let read = document.getElementById("read").value;
     let rating = document.getElementById("rating").value;
 
@@ -46,6 +97,12 @@ function openForm() {
 
 function closeForm() {
     document.getElementById("book-form").style.display = "none";
+
+    titleError.innerHTML = "";
+    authorError.innerHTML = "";
+    pagesError.innerHTML = "";
+
+    bookForm.reset()
 }
 
 function Book(title, author, pages, read, rating) {

@@ -25,6 +25,16 @@ body {
     font-weight: bold;
 }
 
+input:invalid,
+select:invalid {
+    border: 2px solid rgb(191, 0, 0);
+}
+
+.error {
+    font-size: 0.9rem;
+    color: rgb(191, 0, 0);
+}
+
 .new-book {
     grid-column: 3;
     width: 10vw;
@@ -59,7 +69,7 @@ form {
     justify-self: center;
     display: grid;
     grid-template-columns: 5fr 1fr;
-    grid-template-rows: repeat(7, 1fr);
+    grid-template-rows: 1fr 1fr 0.15fr 1fr 0.15fr 1fr 0.15fr 1fr 1fr 1fr;
     gap: 10px;
 }
 
@@ -74,24 +84,39 @@ form {
     grid-row: 2;
 }
 
-.author {
+#title-error {
     grid-row: 3;
+    margin-left: auto;
 }
 
-.pages {
+.author {
     grid-row: 4;
 }
 
-.read {
+#author-error {
     grid-row: 5;
+    margin-left: auto;
 }
 
-.rating {
+.pages {
     grid-row: 6;
 }
 
-.submit {
+#pages-error {
     grid-row: 7;
+    margin-left: auto;
+}
+
+.read {
+    grid-row: 8;
+}
+
+.rating {
+    grid-row: 9;
+}
+
+.submit {
+    grid-row: 10;
     place-self: center;
     margin-left: 100px;
 }

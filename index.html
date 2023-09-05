@@ -16,20 +16,22 @@
     </div>
     <div class="form-popup" id="book-form">
         <form id="form-container" required>
-        <!-- <form id="form-container" onsubmit="addBookToLibrary(); return false;" required> -->
             <div class="form-title">New Book Info</div>
             <div class="title input-area">
                 <label for="title" class="label">Book Title:*</label>
                 <input type="text" name="title" id="title" class="text-input" required>
             </div>
+            <span class="error" id="title-error"></span>
             <div class="author input-area">
                 <label for="author" class="label">Author:*</label>
                 <input type="text" name="author" id="author" class="text-input" required>
             </div>
+            <span class="error" id="author-error"></span>
             <div class="pages input-area">
-                <label for="pages" class="label">Page Count:</label>
+                <label for="pages" class="label">Page Count:*</label>
                 <input type="number" name="pages" id="pages" class="text-input" min="1" required>
             </div>
+            <span class="error" id="pages-error"></span>
             <div class="read input-area">
                 <label for="read" class="label">Read?</label>
                 <select name="read" id="read" class="select-input">
