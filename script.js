@@ -6,19 +6,17 @@ const closeButton = document.getElementById("close-button");
 let myLibrary = [];
 
 
-let title = document.getElementById("title").value;
+
 let titleInput = document.getElementById("title");
 titleInput.addEventListener("blur", titleValidation);
 let titleError = document.getElementById("title-error");
 let titleValid = false;
 
-let author = document.getElementById("author").value;
 let authorInput = document.getElementById("author");
 authorInput.addEventListener("blur", authorValidation);
 let authorError = document.getElementById("author-error");
 let authorValid = false;
 
-let pages = document.getElementById("pages").value;
 let pagesInput = document.getElementById("pages");
 pagesInput.addEventListener("blur", pagesValidation);
 let pagesError = document.getElementById("pages-error");
@@ -30,6 +28,7 @@ submitButton.addEventListener("click", (e) => {
 })
 
 function titleValidation() {
+    let title = document.getElementById("title").value;
     titleError.innerHTML = "";
 
     if (title == "") {
@@ -41,6 +40,7 @@ function titleValidation() {
 }
 
 function authorValidation() {
+    let author = document.getElementById("author").value;
     authorError.innerHTML = "";
 
     if (author == "") {
@@ -52,9 +52,10 @@ function authorValidation() {
 }
 
 function pagesValidation() {
+    let pages = document.getElementById("pages").value;
     pagesError.innerHTML = "";
 
-    if (pageCount == "") {
+    if (pages == "") {
         pagesError.innerHTML = "Page count is required";
         pagesValid = false;
     } else {
@@ -82,6 +83,9 @@ closeButton.addEventListener("click", (e) => {
 })
 
 function submit() {
+    let title = document.getElementById("title").value;
+    let author = document.getElementById("author").value;
+    let pages = document.getElementById("pages").value;
     let read = document.getElementById("read").value;
     let rating = document.getElementById("rating").value;
 
